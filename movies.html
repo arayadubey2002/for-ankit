@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Movies</title>
+</head>
+<style>
+    /* .btn {
+
+        background-color: white;
+        color: black;
+        display: none;
+    } */
+
+    .active {
+        display: block;
+    }
+
+    .mov {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .container {
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    #optionbox {
+        display: none;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"> <a href=""><img src="images/logo.jpg" alt="" class="logoimg"> </a></div>
+
+            <div id="links">
+                <a class="links text" href="movies.html">Movies</a>
+                <a class="links text" href="#">TV Series</a>
+                <a class="links text" href="">Audio</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="slideshow-container">
+        <div class="mySlides1">
+            <img src="images/movieslide1.png" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="images/movieslide2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="images/movieslide3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="images/movieslide4.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="images/movieslide5.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+    <div id="box">
+        <div class="category">
+            <button onmouseover="opengenre()"  class="btn active" onclick="filterSelection('all')">
+                <li id="selected">Genre <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                </li>
+            </button>
+
+            <div class="search">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search your favourite movie title" ><i class="fa fa-search" aria-hidden="true"></i>
+                
+            </div>
+    
+        </div>
+
+        <div id="myBtnContainer" onmouseleave="closegenre()" >
+            
+
+            <div id="optionbox">
+                <button class="btn" onclick="filterSelection('all')">
+                    <li id="all" onclick="allselected()"><a>All</a> </li>
+                </button>
+
+                <button class="btn" onclick="filterSelection('action')">
+                    <li id="act" onclick="actionselected()"><a> Action</a></li>
+                </button>
+
+                <button class="btn" onclick="filterSelection('drama')">
+                    <li id="drama"  onclick="dramaselected()"><a> Drama</a></li>
+                </button>
+
+                <button class="btn" onclick="filterSelection('sci_fi')">
+                    <li id="sci"  onclick="sciselected()"><a>Sci-fi</a> </li>
+                </button>
+            </div>
+        </div>
+        <!-- </div> -->
+
+        
+        <div class="moviediv" id="movieid" style="height: auto;">
+
+
+            <div class="mov action" id="try" style="width: 200px;">
+                <img src="images/movie1.jpg" alt="" style="width: 200px;">
+                <div class="overlay">
+                    <a href="#">Haider</a> <br>Indian crime tragedy film.
+                </div>
+            </div>
+
+            <div class="mov action">
+                <img src="images/movie2.jpg" alt="" style="width: 200px;">
+                <div class="overlay">
+                    <a>Dream2</a><br>Thriller, Mystery & Comedy
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie3.jpg" alt="" width="200px">
+                <div class="overlay">
+                    <a>Batmanl</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov action">
+                <img src="images/movie4.jpg" alt="" width="200px">
+                <div class="overlay">
+                    <a>Monster Manav</a><br>Japanese manga series written by Tsugumi.
+                </div>
+            </div>
+
+            <div class="mov action">
+                <img src="images/movie5.jpg" alt="" width="200px">
+                <div class="overlay">
+                    <a>Kill Bill</a><br>2003 American martial arts film.
+                </div>
+            </div>
+
+            <div class="mov action">
+                <img src="images/movie6.jpg" alt="" width="200px">
+                <div class="overlay">
+                    <a>Rowdy</a><br>Indian action drama film.
+                </div>
+            </div>
+
+        
+            <div class="mov drama" >
+                <img src="images/movie7.jpg" alt="" style="width: 200px">
+                <div class="overlay">
+                    <a href="#">Agnipaath</a> <br>Indian crime tragedy film.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie8.jpg" alt="" style="width:200px">
+                <div class="overlay">
+                    <a>Ankhein</a><br>Thriller, Mystery & Comedy
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie9.jpg" alt="" width="200px">
+                <div class="overlay">
+                    <a>Guide</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov drama">
+                <img src="images/movie10.jpg" alt="" style="width: 200px;">
+                <div class="overlay">
+                    <a href="#">Deewar</a> <br>2016.Fantasy/Science Fiction.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie11.jpg" alt="" style="width: 200px;">
+                <div class="overlay">
+                    <a>Sholay</a><br>A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie12.jpg" alt="" width="200px">
+                <div class="overlay">
+                    <a>K3G</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie13.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Shourya</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie14.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Cheeni Kam</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie15.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Ishq Vishq</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie16.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>padmaavat</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie17.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Kai Po Che</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov drama">
+                <img src="images/movie18.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Raabta</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/movie19.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Interstellar</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/movie20.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Star Wars</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/movie21.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Thor</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/movie22.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Captain America</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/movie23.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>X-Men</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/movie24.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Black Widow</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/nano25.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Iron-Man</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+
+            <div class="mov sci_fi">
+                <img src="images/nano26.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Hulk</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            <div class="mov sci_fi">
+                <img src="images/nano27.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Captain Marvel</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano28.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Wonder Woman</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano29.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Batwoman</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano30.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Batman</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano31.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Superman</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano32.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Superwoman</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano33.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Doctor Sreange</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano34.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Mars</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano35.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Gravity</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+
+            
+            <div class="mov sci_fi">
+                <img src="images/nano36.jpg" alt="" width="100%">
+                <div class="overlay">
+                    <a>Martin</a><br> A Marvel Comics superhero team.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="logo"><img src="images/logo.jpg" alt="365" class="logoimg"></div>   
+          <p>Powered by 365 Entertainment Portal 2019. All Rights Reserved.</p> 
+       </footer>
+</body>
+
+<script src="index.js">
+</script>
+
+<script>
+    function opengenre() {
+        document.getElementById("optionbox").style.display = "block";
+    }
+    function closegenre(){
+        document.getElementById("optionbox").style.display = "none";
+
+    }
+    function actionselected() {
+        document.getElementById("selected").innerHTML = "Action";
+    }
+    function allselected() {
+        document.getElementById("selected").innerHTML = "All";
+    }
+    function dramaselected() {
+        document.getElementById("selected").innerHTML = "Drama";
+    }
+    function sciselected() {
+        document.getElementById("selected").innerHTML = "Sci-Fi";
+    }
+
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("mov");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+
+</html>
